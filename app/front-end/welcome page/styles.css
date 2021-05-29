@@ -7,19 +7,15 @@ body{
     background: #faf6ee;
 }
 
-
-button{
-    margin-right: 2em;
+.d-flex{
+    justify-content: space-around !important;
 }
 
-ul{
-    margin-right: 9.5em;
+.d-flex .btn-lg{
+    border: none; 
+    background-color: #faf6ee;
 }
 
-form{
-    margin-left: 9.5em;
-}
-
-.text-end .btn-outline-light{
-    margin-left: 1.2em;
+.form-control{
+    background-color: #faf6ee;
 }
