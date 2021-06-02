@@ -1,0 +1,29 @@
+{
+  "name": "task-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect ./start.js",
+    "watch": "nodemon ./start.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "model/*.json"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "lockfile": "^1.0.4",
+    "nodemon": "^2.0.3",
+    "pg": "^8.6.0"
+  }
+}
