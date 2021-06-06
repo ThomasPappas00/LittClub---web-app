@@ -10,5 +10,5 @@ Open a terminal from the current folder
         or <br />
         $npm run watch <br />
         
---> to start the server
+--> to start the server <br />
     the server is now listening in localhost and PORT:3000
