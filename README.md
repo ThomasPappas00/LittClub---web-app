@@ -3,6 +3,7 @@ INSTRUCTIONS FOR RUNNING THE 'LITTCLUB' SERVER LOCALLY
 Open a terminal from the '../littclub -- app/littclub' folder
 
 1) run: $npm install 
+
 --> to install dependencies
 
 2)run: $npm run debug
