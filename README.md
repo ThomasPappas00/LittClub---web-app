@@ -1,6 +1,6 @@
 INSTRUCTIONS FOR RUNNING THE 'LITTCLUB' SERVER LOCALLY 
 
-Open a terminal from the '../littclub -- app/littclub' folder
+Open a terminal from the current folder
 
 1) run: $npm install 
 
