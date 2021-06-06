@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+
+    <title>LittClub · Terms</title>
+</head>
+<body>
+
+<header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="col-md-7">
+              <button onclick="window.location.href='/home'" type="button" class="col-md-3 btn btn-default btn-lg"> 
+                  <span class="glyphicon glyphicon-book"></span> LittClub </button>
+      
+              <ul class="nav col-md-6 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/profile" class="nav-link px-2 text-white">Profile</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link px-2 text-white dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Topics
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/topics">My Topics</a>
+                  <a class="dropdown-item" href="/favorites">My Favorites</a>
+                </div>
+              </li>
+              <li><a href="/faqlogged" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="/aboutlogged" class="nav-link px-2 text-white">About</a></li>
+              </ul>
+            </div>
+            <div class="col-md-5">
+              <form class="col-sm-9" action="/search" method="post">
+              <input type="search" class="form-control form-control-dark col-md-9" placeholder="Search..." aria-label="Search" name='search'>
+              <button class="btn btn-outline-secondary col-md-3" type="submit">Search</button>
+              </form>
+
+      
+              <div class="text-end col-md-3">
+              <button onclick="window.location.href='/logout'" type="button" class="btn btn-warning">Log out</button>
+                </div>
+              </div> 
+          </div>
+      </div>
+    </header>
+  
+      <hr>
+    <div class="container marketing" style="height: 600px;">
+        {{!-- <main role="main" class="container"> --}}
+
+            <div class="starter-template">
+            <h1>Terms and licence</h1>
+            <p class="lead">LittClub is a project developed by Theofanis Manousis and Thomas Pappas during the "Web Development/2021" course in ECE department, University of Patras, Greece.</p>
+            <p class="lead">This application is developed and used for academic reasons only is not commercially available yet. The application is not taking proper care of the privacy and security of the users' data at this point. Please use LittClub for demo/testing purposes.</p>
+            <p class="lead">LittClub is an open source project and the github repository is public. Nonetheless, no third party has the privilege to host this website.</p>
+            <p class="lead">For any information, please contact the developers:</p>
+            <p class="lead" style="font-size: 1em;">artofapes@gmail.com<br>tomas13pappas@gmail.com</p>
+
+            </div>
+    
+        {{!-- </main> --}}
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="https://github.com/ThomasPappas00/LittClub---web-app">Github repository</a></p>
+        <p>© 2021 LittClub, Inc. · <a href="/termslogged">Terms</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

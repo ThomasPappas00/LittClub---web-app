@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>LittClub · Home</title>
+  </head>
+  <body>
+  <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="col-md-7">
+              <button onclick="window.location.href='/home'" type="button" class="col-md-3 btn btn-default btn-lg"> 
+                  <span class="glyphicon glyphicon-book"></span> LittClub </button>
+      
+              <ul class="nav col-md-6 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/profile" class="nav-link px-2 text-white">Profile</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link px-2 text-white dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Topics
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/topics">My Topics</a>
+                  <a class="dropdown-item" href="/favorites">My Favorites</a>
+                </div>
+              </li>
+              <li><a href="/faqlogged" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="/aboutlogged" class="nav-link px-2 text-white">About</a></li>
+              </ul>
+            </div>
+            <div class="col-md-5">
+              <form class="col-sm-9" action="/search" method="post">
+              <input type="search" class="form-control form-control-dark col-md-9" placeholder="Search..." aria-label="Search" name='search'>
+              <button class="btn btn-outline-secondary col-md-3" type="submit">Search</button>
+              </form>
+
+      
+              <div class="text-end col-md-3">
+              <button onclick="window.location.href='/logout'" type="button" class="btn btn-warning">Log out</button>
+                </div>
+              </div> 
+          </div>
+      </div>
+    </header>
+  
+      <hr>
+  
+      <div class="container marketing" style="min-height: 600px;">
+          <h1 class="text-center">LITTCLUB</h1>
+          <hr>
+          <!-- START THE FEATURETTES -->
+        <button onclick="window.location.href='#BooNew'" type="button" class="btn btn-primary btn-lg btn-block">Book News</button>
+        <button onclick="window.location.href='#BooMedia'" type="button" class="btn btn-secondary btn-lg btn-block">Book Media</button>
+        <button onclick="window.location.href='#SugTop'" type="button" class="btn btn-secondary btn-lg btn-block">Suggested Topics</button>
+       <hr>
+          <div class="container marketing" id="BooNew">
+              <h2>News from the Literature World</h2>
+              <br>
+              <div class="row"><h3><a href="https://www.theguardian.com/books/2021/jun/05/summer-reading-the-50-hottest-new-books-everyone-should-read"> Summer reading: the 50 hottest new books everyone should read</a></h3>
+              <p>From missing lighthouse keepers to the healing power of trees ... 50 new fiction and nonfiction books to enjoy...</p>
+              </div>
+              <hr>
+              <div class="row"><h3><a href="https://www.nytimes.com/2021/06/03/books/review/alice-waters-by-the-book-interview.html"> ‘Food Is Culture’: Alice Waters on the Cookbook That Changed Her Life</a></h3>
+              <br>
+              <p>The chef and restaurateur, whose new book is “We Are What We Eat,” was heavily influenced by Elizabeth David’s book “French Country Cooking”: ‘All I wanted to do was live like the French.’
+What books are on your night stand?</p>
+              </div>
+              <hr>
+              <div class="row"><h3><a href="https://www.nytimes.com/2021/06/04/books/philip-roth-biography-blake-bailey.html">What Happens to Philip Roth’s Legacy Now?</a></h3>
+              <p>His single authorized biography is mired in controversy. Scholars say it shouldn’t be the last word, but they are struggling for access to his vast and in some cases inaccessible private archives.</p>
+              </div>
+              <hr>
+              <div class="row"><h3><a href="https://www.bookbrowse.com/news/detail/index.cfm/news_item_number/2753/news/eric-carle-author-of-the-very-hungry-caterpillar-dies-at-91">Eric Carle, author of "The Very Hungry Caterpillar," dies at 91</a></h3>
+              <p>The Very Hungry Caterpillar, Mr. Carle’s best-known book, has sold more than 55 million copies around the world since it was first published ...</p>
+              </div>
+              <hr>
+             </div>
+
+        <div class="container marketing" id="BooMedia">
+            <h2>Media from the Literature World</h2>
+            <hr>
+            <div class="row">
+            <div class="col-md-6">
+                <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/EJm-N4B_odA">
+            </iframe>
+            <p>A mind that is free | J. Krishnamurti</p>
+            </div>
+            <div class="col-md-6">
+                <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/sPvBXsiA9Zs">
+            
+            </iframe>
+            <p>Ernest Hemingway, Wrestling With Life </p>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/0L0vNOr2YKI">
+            </iframe>
+            <p>How Our Life Shapes Our Life's Work" Irv Yalom interview</p>
+            </div>
+            <div class="col-md-6">
+                <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/36GT2zI8lVA">
+            
+            </iframe>
+            <p>Richard Feynman. Why.</p>
+            </div>
+            </div>
+
+
+             <hr class="featurette-divider"> 
+             <hr class="featurette-divider">
+            </div>
+
+                  <div class="row" id="SugTop">
+            <div >
+              <h2 class="featurette-heading">You may be interested in...</h2>
+              <br>
+              <br>
+            </div>
+
+          <hr class="featurette-divider"> 
+          <hr class="featurette-divider">
+          
+          {{#if topic}}
+          <hr class="featurette-divider">
+                {{#each topic}}
+                
+                <div class="row">
+                <div class="col-md-2">
+                {{#if topic_photo_src}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src=/{{{topic_photo_src}}} data-holder-rendered="true"  style="width: 200px; height:200px">
+                {{else}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/placeholders/image_placeholder.jpg" data-holder-rendered="true"  style="width: 200px; height:200px">
+                {{/if}}
+                </div> 
+                <div class="col-md-1"> </div>
+                <div class="col-md-9"> 
+            
+                <div class="row"><h3><b>
+                 <a href="/topic/{{topic_id}}"> {{topic_title}} </a>
+                </b></h3></div>  
+                <div class="row">   <div class="col-sm-9"><h5> <b>Book title: <a href="/book/{{book_id}}">{{book_title}}</a> </b> <small> by <a href="/author/{{author}}">{{author}}</a> published on {{publish_date}}</small></h5></div>     
+                </div>
+                <p>{{description}}</p>
+                </div>
+                <hr class="featurette-divider">
+                </div> 
+                {{/each}}
+            {{else}}
+       <!--     <h6>You haven't any Topics yet</h6> -->
+            {{/if}} 
+            </div>
+
+            <hr class="featurette-divider">
+            
+
+          <hr class="featurette-divider">
+        
+
+    
+          <!-- /END THE FEATURETTES -->
+    </div>
+    
+          <!-- FOOTER -->
+          <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>© 2021 LittClub, Inc. · <a href="/termslogged">Terms</a></p>
+          </footer>
+    
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

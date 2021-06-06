@@ -1,0 +1,245 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>LittClub · Profile</title>
+  </head>
+  <body>
+  
+<header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="col-md-7">
+              <button onclick="window.location.href='/home'" type="button" class="col-md-3 btn btn-default btn-lg"> 
+                  <span class="glyphicon glyphicon-book"></span> LittClub </button>
+      
+              <ul class="nav col-md-6 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/profile" class="nav-link px-2 text-white">Profile</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link px-2 text-white dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Topics
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/topics">My Topics</a>
+                  <a class="dropdown-item" href="/favorites">My Favorites</a>
+                </div>
+              </li>
+              <li><a href="/faqlogged" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="/aboutlogged" class="nav-link px-2 text-white">About</a></li>
+              </ul>
+            </div>
+            <div class="col-md-5">
+              <form class="col-sm-9" action="/search" method="post">
+              <input type="search" class="form-control form-control-dark col-md-9" placeholder="Search..." aria-label="Search" name='search'>
+              <button class="btn btn-outline-secondary col-md-3" type="submit">Search</button>
+              </form>
+
+      
+              <div class="text-end col-md-3">
+              <button onclick="window.location.href='/logout'" type="button" class="btn btn-warning">Log out</button>
+                </div>
+              </div> 
+          </div>
+      </div>
+    </header>
+  
+      <hr>
+  
+      <div class="container marketing">
+  
+          <!-- START THE FEATURETTES -->
+          <hr class="featurette-divider">
+          <div class="row">
+            <div class="col-md-5">
+              <h2 class="featurette-heading">My Profile</h2>
+              
+
+            </div>
+
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              {{#if user.user_photo_src}}
+              <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="/{{{user.user_photo_src}}}" data-holder-rendered="true" style="width: 100%; height:auto">
+              {{else}}
+              {{!-- <h1>Not photo</h1> --}}
+              <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/placeholders/person_placeholder.jpg" data-holder-rendered="true"  style="width: 100px; height:auto">
+               <br><br>   <form action="/upload_user_photo" method="post" enctype="multipart/form-data">
+               <label>
+                      Add Picture <br>
+
+                              <input type="file" id="file" name="file" accept="image/*">
+                               <input type="submit" value="submit">
+                         
+                  </label>
+                  </form>
+               
+              {{/if}}
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <h2><b>{{user.firstname }} {{user.lastname}}</b></h2>
+                    
+                </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2"> 
+                <h4><b>{{user.mytopics}} Topics</b></h4>
+            </div>
+            <div class="col-md-2">
+            <h4><b>{{user.favorites}} Favorites</b></h4>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                <ul class="list-unstyled">
+                        <li></li>
+                        <li>
+                            {{user.city  }},        
+                            {{user.age  }}              
+                        </li>
+                        <li>
+                            {{user.profession}}
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li>
+                            
+                        </li>
+                    </ul>
+                    "{{user.bio}}"
+
+
+                  {{#if user.admin_access}}
+                    <br>
+                    <div class="col-md-7">
+
+                      <H3 class="text-center">ADMIN PRIVILEGES</H3>
+                      <button onclick="window.location.href='/useredit'" type="button" class="btn btn-primary btn-lg btn-block">Edit Users</button>
+                      <button onclick="window.location.href='/topicedit'" type="button" class="btn btn-secondary btn-lg btn-block">Edit Topics</button>
+
+                    </div>
+                  {{/if}}
+
+
+
+
+                    </div>
+            </div>
+
+            </div>
+          </div>
+          <hr class="featurette-divider">
+          <div class="row">
+            <div class="col-md-5">
+              <h2 class="featurette-heading">My Topics</h2>
+            </div>
+
+            <div class="col-md-1"></div>
+            <div class="col-md-6"></div>
+
+          </div>
+            {{#if topic}}
+                {{#each topic}}
+                
+                <div class="row">
+                <div class="col-md-2">
+                {{#if topic_photo_src}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/{{{topic_photo_src}}}" data-holder-rendered="true"  style="width: 100px; height:100px">
+                {{else}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/placeholders/image_placeholder.jpg" data-holder-rendered="true"  style="width: 100px; height:100px">
+                {{/if}}
+                </div> 
+                <div class="col-md-1"> </div>
+                <div class="col-md-9"> 
+            
+                <div class="row"><h3><b>
+                 <a href="/topic/{{topic_id}}"> {{topic_title}} </a>
+                </b></h3></div>  
+                <div class="row">   <div class="col-sm-9"><h5> <b>Book title: <a href="/book/{{book_id}}">{{book_title}}</a> </b> <small> by <a href="/author/{{author}}">{{author}}</a></small></h5></div>     
+                </div>
+                </div>
+                <hr class="featurette-divider">
+                </div> 
+                {{/each}}
+            {{else}}
+            <h6>You haven't any Topics yet</h6>
+            {{/if}}
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="featurette-heading">My Favorites</h2>
+              </div>
+  
+              <div class="col-md-1"></div>
+              <div class="col-md-6"></div> 
+  
+            </div>
+            {{#if favorite}}
+               {{#each favorite}}
+                
+                <div class="row">
+                <div class="col-md-2">
+                {{#if topic_photo_src}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/{{{topic_photo_src}}}" data-holder-rendered="true"  style="width: 100px; height:100px">
+                {{else}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/placeholders/image_placeholder.jpg" data-holder-rendered="true"  style="width: 100px; height:100px">
+                {{/if}}
+                </div> 
+                <div class="col-md-1"> </div>
+                <div class="col-md-9"> 
+            
+                <div class="row"><h3><b>
+                 <a href="/topic/{{topic_id}}"> {{topic_title}} </a>
+                </b></h3></div>  
+                <div class="row">   <div class="col-sm-9"><h5> <b>Book title: <a href="/book/{{book_id}}">{{book_title}}</a> </b> <small> by <a href="/author/{{author}}">{{author}}</a></a></small></h5></div>     
+                </div>
+                </div>
+                <hr class="featurette-divider">
+                </div> 
+                {{/each}}
+            {{else}}
+            <h6>You haven't any Favorites yet</h6>
+            {{/if}}
+
+
+
+           
+          <hr class="featurette-divider">
+        
+
+    
+          <!-- /END THE FEATURETTES -->
+    
+    
+          <!-- FOOTER -->
+          <footer class="mt-auto">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>© 2021 LittClub, Inc. · <a href="/termslogged">Terms</a></p>
+          </footer>
+    
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>LittClub · Admin</title>
+  </head>
+  <body>
+  
+  
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="col-md-7">
+              <button onclick="window.location.href='/profile'" type="button" class="col-md-3 btn btn-default btn-lg"> 
+                  <span class="glyphicon glyphicon-book"></span> LittClub </button>
+      
+              <ul class="nav col-md-6 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/profile" class="nav-link px-2 text-white">Profile</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link px-2 text-white dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Topics
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/topics">My Topics</a>
+                  <a class="dropdown-item" href="/favorites">My Favorites</a>
+                </div>
+              </li>
+              <li><a href="/faqlogged" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="/aboutlogged" class="nav-link px-2 text-white">About</a></li>
+              </ul>
+            </div>
+            <div class="col-md-5">
+              <div class="col-md-2"></div>
+              <form class="col-md-6 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+              </form>
+      
+              <div class="text-end col-md-4">
+              <button onclick="window.location.href='/logout'" type="button" class="btn btn-warning">Log out</button>
+            </div>
+              </div> 
+          </div>
+      </div>
+    </header>
+  
+      <hr>
+  
+      <div class="container marketing" style="min-height: 600px;">
+  
+          <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+            <div class="row">
+            <div class="col-md-5">
+              <h2 class="featurette-heading">Edit users</h2>
+              <br>
+            </div>
+          </div>
+          
+          {{#if user}}
+                {{#each user}}
+                
+                <div class="row">
+                <div class="col-md-2">
+                {{#if user_photo_src}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src=/{{{user_photo_src}}} data-holder-rendered="true"  style="width: 100px; height:100px">
+                {{else}}
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/placeholders/person_placeholder.jpg" data-holder-rendered="true"  style="width: 200px; height:200px">
+                {{/if}}
+                </div> 
+                <div class="col-md-1"> </div>
+                <div class="col-md-9"> 
+            
+                <div class="row"><h3><b>
+                 <a href="/profile/{{username}}" class="col-6"> {{firstname}} {{lastname}}</a>
+                </b>
+                </h3>
+                <div class="col-1"></div>
+                <button  onclick="window.location.href='/deleteuser/{{username}}'" class="btn btn-dark"> Delete</button>
+                </div>  
+ 
+                </div>
+                <hr class="featurette-divider">
+                </div> 
+                {{/each}}
+            {{else}}
+            <h6>No Members found.</h6>
+            {{/if}}
+            
+
+          <hr class="featurette-divider">
+        
+
+    
+          <!-- /END THE FEATURETTES -->
+        </div>
+    
+          <!-- FOOTER -->
+          <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>© 2021 LittClub, Inc. · <a href="/termslogged">Terms</a></p>
+          </footer>
+    
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

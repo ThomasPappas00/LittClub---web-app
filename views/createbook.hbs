@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./path/to/dropzone.js"></script>
+    <title>LittClub · Create Book</title>
+  </head>
+  <body>
+  
+<header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="col-md-7">
+              <button onclick="window.location.href='/home'" type="button" class="col-md-3 btn btn-default btn-lg"> 
+                  <span class="glyphicon glyphicon-book"></span> LittClub </button>
+      
+              <ul class="nav col-md-6 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/profile" class="nav-link px-2 text-white">Profile</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link px-2 text-white dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Topics
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/topics">My Topics</a>
+                  <a class="dropdown-item" href="/favorites">My Favorites</a>
+                </div>
+              </li>
+              <li><a href="/faqlogged" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="/aboutlogged" class="nav-link px-2 text-white">About</a></li>
+              </ul>
+            </div>
+            <div class="col-md-5">
+              <form class="col-sm-9" action="/search" method="post">
+              <input type="search" class="form-control form-control-dark col-md-9" placeholder="Search..." aria-label="Search" name='search'>
+              <button class="btn btn-outline-secondary col-md-3" type="submit">Search</button>
+              </form>
+
+      
+              <div class="text-end col-md-3">
+              <button onclick="window.location.href='/logout'" type="button" class="btn btn-warning">Log out</button>
+                </div>
+              </div> 
+          </div>
+      </div>
+    </header>
+  
+      <hr>
+  
+      <div class="container marketing" style="min-height: 600px;">
+  
+          <!-- START THE FEATURETTES -->
+          <hr class="featurette-divider">
+          <h2>First you can add a new Book.</h2>
+            <form action="/createbook" method="post">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Add Book's Title</label>
+            <input type="text" name="book_title" class="form-control" id="book_title" placeholder="Title">
+          </div>
+         <div class="form-group">
+            <label for="exampleFormControlInput1">Add Book's Author</label>
+            <input type="text" name="author" class="form-control" id="author" placeholder="Author">
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Add Book's Translator (if any)</label>
+            <input type="text" name="translator" class="form-control" id="translator" placeholder="Translator">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Add Book's publishing date</label>
+            <input type="text" name="publish_date" class="form-control" id="publish_date" placeholder="Publish date">
+          </div>
+          
+          <div class="form-group">
+          <input type="submit" value="Submit">
+          </div>
+  </form>
+  <button onclick="window.location.href='/createtopic'" type="button"> Skip this section</button>
+           
+          <hr class="featurette-divider">
+        
+
+    
+          <!-- /END THE FEATURETTES -->
+    
+    </div>
+          <!-- FOOTER -->
+          <footer class="mt-auto">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>© 2021 LittClub, Inc. · <a href="/termslogged">Terms</a></p>
+          </footer>
+    
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
