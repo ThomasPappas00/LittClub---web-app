@@ -6,9 +6,9 @@ Open a terminal from the current folder
 
 --> to install dependencies
 
-2)run: $npm run debug
-        or
-        $npm run watch
+2)run: $npm run debug <br />
+        or <br />
+        $npm run watch <br />
+        
 --> to start the server
-
-the sever is now listening in localhost and PORT:3000
+    the server is now listening in localhost and PORT:3000
