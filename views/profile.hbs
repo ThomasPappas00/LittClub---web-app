@@ -80,7 +80,7 @@
               {{else}}
               {{!-- <h1>Not photo</h1> --}}
               <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="200x200" src="/placeholders/person_placeholder.jpg" data-holder-rendered="true"  style="width: 100px; height:auto">
-               <br><br>   <form action="/upload_user_photo" method="post" enctype="multipart/form-data">
+               <br><br>   <form action="/upload_user_photo/{{user.username}}" method="post" enctype="multipart/form-data">
                <label>
                       Add Picture <br>
 

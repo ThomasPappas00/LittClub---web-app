@@ -20,8 +20,8 @@ router.get('/signin', appFetchController.checkAuthenticated,appFetchController.g
 router.post('/signup', appFetchController.signupUser);                                                      //sign up new user
 router.post('/signin', appFetchController.signinUser);                                                       //sign in user with email and password
 router.get('/logout', appFetchController.checkAuthenticated,appFetchController.doLogOut);                   //logout user
-router.post('/upload_user_photo', appFetchController.checkAuthenticated, upload.single('file'), appFetchController.uploadUserPhoto);     //upload photo for profile picture
-router.post('/upload_topic_photo/:topic_id', appFetchController.checkAuthenticated, upload.single('file'), appFetchController.uploadTopicPhoto);  //upload photo for topic picture
+router.post('/upload_user_photo/:username', appFetchController.checkAuthenticated, upload.single('file'), appFetchController.uploadUserPhoto);     //upload photo for profile picture
+router.post('/upload_topic_photo/:topic_id/:username', appFetchController.checkAuthenticated, upload.single('file'), appFetchController.uploadTopicPhoto);  //upload photo for topic picture
 
 router.get('/home', appFetchController.checkAuthenticated, appFetchController.getHomePage);                 //home page for users (singed in clients)
 router.get('/profile', appFetchController.checkAuthenticated, appFetchController.getMyProfilePage);         //profile page of user browsing    

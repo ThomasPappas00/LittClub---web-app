@@ -176,33 +176,38 @@ async function signinUser(req,res,type){
 
 function uploadUserPhoto(req,res){
     console.log('READY TO UPLOAD PHOTO')
-    const file = req.file   
+    const file = req.file
+    const username = req.params.username;   
     console.log(file)
+    if(username == req.session.user){
+        const tempPath = req.file.path;
+        const targetPath = path.join(__dirname, "../static/photos/users/"  + req.file.filename + ".jpg");   //make path to store user profile photo
     
-    const tempPath = req.file.path;
-    const targetPath = path.join(__dirname, "../static/photos/users/"  + req.file.filename + ".jpg");   //make path to store user profile photo
-
-    if (path.extname(req.file.originalname).toLowerCase() === ".jpg") {                 //accept .jpg format
-        fs.rename(tempPath, targetPath, err => {
-        if (err) throw(err);  
-        console.log(req.session.user)  
-        const user_photo_src = 'users/' + req.file.filename + '.jpg';
-        console.log(user_photo_src)
-        pool.query('UPDATE users SET user_photo_src = $1 WHERE username = $2', [user_photo_src, req.session.user], (err,results) => { //save path string in db
-            console.log('file uploaded')
-            res.redirect('profile')
-        });
-        
-        });
-    } else {
-        fs.unlink(tempPath, err => {
-        if (err) throw(err)
-
-        res
-            .status(403)
-            .contentType("text/plain")
-            .end("Only .jpg files are allowed!");
-        });
+        if (path.extname(req.file.originalname).toLowerCase() === ".jpg") {                 //accept .jpg format
+            fs.rename(tempPath, targetPath, err => {
+            if (err) throw(err);  
+            console.log(req.session.user)  
+            const user_photo_src = 'users/' + req.file.filename + '.jpg';
+            console.log(user_photo_src)
+            pool.query('UPDATE users SET user_photo_src = $1 WHERE username = $2', [user_photo_src, req.session.user], (err,results) => { //save path string in db
+                console.log('file uploaded')
+                res.redirect('back')
+            });
+            
+            });
+        } else {
+            fs.unlink(tempPath, err => {
+            if (err) throw(err)
+    
+            res
+                .status(403)
+                .contentType("text/plain")
+                .end("Only .jpg files are allowed!");
+            });
+        }
+    }
+    else{
+        res.redirect('back')
     }
 }
 
@@ -213,29 +218,35 @@ function uploadTopicPhoto(req,res){
     console.log(file)
     const topic_id = req.params.topic_id
     console.log('upload photo for topic: ' + topic_id )
+    const username = req.params.username;
     
-    const tempPath = req.file.path;
-    const targetPath = path.join(__dirname, "../static/photos/topics/"  + req.file.filename + ".jpg");
-
-    if (path.extname(req.file.originalname).toLowerCase() === ".jpg") {
-        fs.rename(tempPath, targetPath, err => {
-        if (err) throw(err);   
-        const topic_photo_src = 'topics/' + req.file.filename + '.jpg';
-        console.log(topic_photo_src)        
-        pool.query('UPDATE topic SET topic_photo_src = $1 WHERE topic_id = $2', [topic_photo_src, topic_id], (err,results) => {
-            console.log('file uploaded')
-            return res.redirect('back')
-        });  
-        });
-    }else {
-        fs.unlink(tempPath, err => {
-        if (err) throw(err)
-
-        res
-            .status(403)
-            .contentType("text/plain")
-            .end("Only .jpg files are allowed!");
-        });
+    if(username == req.session.user){
+        const tempPath = req.file.path;
+        const targetPath = path.join(__dirname, "../static/photos/topics/"  + req.file.filename + ".jpg");
+    
+        if (path.extname(req.file.originalname).toLowerCase() === ".jpg") {
+            fs.rename(tempPath, targetPath, err => {
+            if (err) throw(err);   
+            const topic_photo_src = 'topics/' + req.file.filename + '.jpg';
+            console.log(topic_photo_src)        
+            pool.query('UPDATE topic SET topic_photo_src = $1 WHERE topic_id = $2', [topic_photo_src, topic_id], (err,results) => {
+                console.log('file uploaded')
+                return res.redirect('back')
+            });  
+            });
+        }else {
+            fs.unlink(tempPath, err => {
+            if (err) throw(err)
+    
+            res
+                .status(403)
+                .contentType("text/plain")
+                .end("Only .jpg files are allowed!");
+            });
+        }
+    }
+    else{
+        res.redirect('back');
     }
 }
 //
