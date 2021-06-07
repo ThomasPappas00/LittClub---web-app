@@ -12,3 +12,7 @@ Open a terminal from the current folder
         
 --> to start the server <br />
     the server is now listening in localhost and PORT:3000
+
+
+Feel free joining LittClub: 
+https://littclub-app.herokuapp.com/
