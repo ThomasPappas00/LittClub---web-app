@@ -1,4 +1,4 @@
-INSTRUCTIONS FOR RUNNING THE 'LITTCLUB' SERVER LOCALLY 
+# **INSTRUCTIONS FOR RUNNING THE 'LITTCLUB' SERVER LOCALLY** 
 
 Open a terminal from the current folder
 
@@ -6,7 +6,7 @@ Open a terminal from the current folder
 
 --> to install dependencies
 
-2)run: $npm run debug <br />
+2) run: $npm run debug <br />
         or <br />
         $npm run watch <br />
         
